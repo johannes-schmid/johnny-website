@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Johnny Durán — Leadership & Performance Coach</title>
+  <meta name="description" content="Johnny Durán helps leaders, founders and high-performers regain clarity, regulate their energy and sustain success — without sacrificing their wellbeing.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#1d1b1c',
+            cream: '#fefcf5',
+            yellow: '#acd1a6',
+            warmgray: '#eeece7',
+            muted: '#a5a49f',
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Manrope', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #1d1b1c;
+      --cream: #fefcf5;
+      --yellow: #acd1a6;
+      --warmgray: #eeece7;
+      --muted: #a5a49f;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Grain texture ── */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 220px 220px;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(29, 27, 28, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(238, 236, 231, 0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s ease, transform 0.15s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #bdddb8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(172, 209, 166, 0.35);
+    }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+
+    .btn-ghost {
+      border: 1px solid rgba(238, 236, 231, 0.28);
+      color: var(--cream);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(238, 236, 231, 0.6);
+      background: rgba(238, 236, 231, 0.05);
+      transform: translateY(-2px);
+    }
+    .btn-ghost:active { transform: translateY(0); }
+
+    .btn-dark {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      border: 1.5px solid var(--dark);
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-dark:hover {
+      background: rgba(29, 27, 28, 0.82);
+      transform: translateY(-2px);
+    }
+    .btn-dark:active { transform: translateY(0); }
+
+    .btn-outline-dark {
+      border: 1.5px solid rgba(29, 27, 28, 0.35);
+      color: var(--dark);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-outline-dark:hover {
+      border-color: var(--dark);
+      background: rgba(29, 27, 28, 0.07);
+      transform: translateY(-2px);
+    }
+
+    /* ── Labels & dividers ── */
+    .label {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .label-dark {
+      color: rgba(29, 27, 28, 0.45);
+    }
+
+    .yellow-bar {
+      width: 44px;
+      height: 2px;
+      background: var(--yellow);
+      margin-bottom: 2rem;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to top, rgba(29,27,28,0.92) 0%, rgba(29,27,28,0.55) 40%, rgba(29,27,28,0.18) 70%, transparent 100%),
+        linear-gradient(to right, rgba(29,27,28,0.65) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 9rem 2.5rem 6rem;
+      max-width: 780px;
+    }
+
+    .hero-headline {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(3rem, 5.2vw, 5.8rem);
+      line-height: 0.97;
+      letter-spacing: -0.035em;
+      color: var(--cream);
+      margin-bottom: 2rem;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: rgba(238, 236, 231, 0.82);
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Hero photo badge */
+    .hero-photo-badge {
+      position: absolute;
+      bottom: 6rem;
+      right: 2.5rem;
+      z-index: 2;
+    }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      background: rgba(238, 236, 231, 0.035);
+      border-top: 1px solid rgba(238, 236, 231, 0.07);
+      border-bottom: 1px solid rgba(238, 236, 231, 0.07);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-right: 0;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Problem section ── */
+    #problem {
+      background: var(--cream);
+      padding: 8rem 2.5rem;
+    }
+
+    .two-col {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .section-h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+    }
+
+    .body-copy {
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .quote-block {
+      background: rgba(29, 27, 28, 0.05);
+      border-left: 3px solid var(--yellow);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* ── Solution section ── */
+    #solution {
+      background: var(--dark);
+      padding: 8rem 2.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Different section ── */
+    #different {
+      background: var(--warmgray);
+      padding: 8rem 2.5rem;
+    }
+
+    .diff-row {
+      border-top: 1px solid rgba(29, 27, 28, 0.1);
+      padding: 1.75rem 0;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      cursor: default;
+      transition: border-color 0.2s ease;
+    }
+    .diff-row:last-child { border-bottom: 1px solid rgba(29, 27, 28, 0.1); }
+
+    .diff-arrow {
+      color: var(--yellow);
+      font-size: 1.1rem;
+      margin-top: 0.2rem;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .diff-row:hover .diff-arrow { transform: translateX(4px); }
+
+    /* ── Services ── */
+    #services {
+      background: var(--dark);
+      padding: 8rem 2.5rem;
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: rgba(238, 236, 231, 0.035);
+      border: 1px solid rgba(238, 236, 231, 0.08);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      background: rgba(238, 236, 231, 0.06);
+      border-color: rgba(222, 229, 72, 0.22);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    .service-card:focus-within {
+      border-color: rgba(222, 229, 72, 0.4);
+      outline: none;
+    }
+
+    .diamond-icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Method ── */
+    #method {
+      background: var(--cream);
+      padding: 8rem 2.5rem;
+      overflow: hidden;
+    }
+
+    .phase-row {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 1.5rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(29, 27, 28, 0.1);
+    }
+    .phase-row:last-of-type { border-bottom: none; }
+
+    .phase-num {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.7rem;
+      color: var(--yellow);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+    }
+
+    /* ── Results ── */
+    #results {
+      background: var(--dark);
+      padding: 8rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .results-img-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('./Resources/Pictures/IMG_7531.jpeg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 0.9rem 0;
+    }
+
+    .check-circle {
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── About ── */
+    #about {
+      background: var(--cream);
+      padding: 8rem 2.5rem;
+    }
+
+    .cert-chip {
+      display: inline-block;
+      padding: 0.32rem 0.85rem;
+      border: 1px solid rgba(29, 27, 28, 0.18);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(29, 27, 28, 0.65);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ── Testimonials ── */
+    #testimonials {
+      background: var(--dark);
+      padding: 8rem 2.5rem;
+      position: relative;
+    }
+
+    .testimonial-card {
+      background: rgba(238, 236, 231, 0.035);
+      border: 1px solid rgba(238, 236, 231, 0.08);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .big-quote {
+      font-family: 'Syne', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 0.8;
+      margin-bottom: 0.5rem;
+      opacity: 0.55;
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(222, 229, 72, 0.12);
+      border: 1px solid rgba(222, 229, 72, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.68rem;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    /* ── CTA section ── */
+    #cta {
+      background: #1F3B2A;
+      padding: 8rem 2.5rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      padding: 2.75rem 2.5rem;
+      border-top: 1px solid rgba(238, 236, 231, 0.07);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      #hero {
+        align-items: flex-end;
+      }
+      .hero-text { padding: 7rem 1.5rem 5rem; }
+      .hero-photo-badge { right: 1.5rem; bottom: 5rem; }
+      .two-col { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      #method .two-col { grid-template-columns: 1fr; }
+      .method-photo { display: none; }
+      #testimonials .three-col { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-headline { font-size: 2.8rem; }
+      #problem, #solution, #different, #services,
+      #method, #results, #about, #testimonials, #cta {
+        padding: 5rem 1.5rem;
+      }
+    }
+
+    /* ── Photo frame ── */
+    .photo-frame {
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-frame .grad-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 35%, rgba(29,27,28,0.55) 100%);
+    }
+    .photo-frame .tint {
+      position: absolute;
+      inset: 0;
+      background: rgba(147, 163, 205, 0.07);
+      mix-blend-mode: multiply;
+    }
+
+    /* ── Load animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .hero-text .label       { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+    .hero-text .hero-headline { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+    .hero-text .hero-sub    { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.36s both; }
+    .hero-text .cta-row     { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.48s both; }
+    .hero-bg-photo          { animation: fadeIn 1.2s ease 0s both; }
+    .hero-photo-badge       { animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s both; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav>
+    <a href="#" class="nav-logo">Johnny Durán</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+    <a href="#cta" class="btn-primary">Apply Now</a>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero" class="grain">
+    <div class="hero-bg-photo">
+      <img src="./Resources/Pictures/hero.png" alt="Johnny Durán, Leadership & Performance Coach">
+    </div>
+    <div class="hero-bg"></div>
+
+    <div class="hero-text">
+      <span class="label">Leadership · Energy · Performance</span>
+      <h1 class="hero-headline">
+        Reconnect<br>with your<br><em>energy.</em>
+      </h1>
+      <p class="hero-sub">
+        I help leaders, founders and high-performers regain clarity, regulate their energy and sustain success — without sacrificing their wellbeing.
+      </p>
+      <div class="cta-row" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#cta" class="btn-primary">Apply to Work Together</a>
+        <a href="#services" class="btn-ghost">Explore Programs &nbsp;↓</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-badge">
+      <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:0.35rem;">Barcelona · Global</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:rgba(254,252,245,0.65);">Founder of TRIBUTHO</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TRUST STRIP ═══════════════ -->
+  <div class="trust-strip">
+    <div class="marquee-track">
+      <span>Trusted by Athletes &nbsp;·&nbsp; Founders &nbsp;·&nbsp; Corporate Leaders &nbsp;·&nbsp; High-Performers &nbsp;·&nbsp; Entrepreneurs &nbsp;·&nbsp; Professional Athletes &nbsp;·&nbsp; Navigating Pressure &nbsp;·&nbsp; Transition &nbsp;·&nbsp; Growth &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>Trusted by Athletes &nbsp;·&nbsp; Founders &nbsp;·&nbsp; Corporate Leaders &nbsp;·&nbsp; High-Performers &nbsp;·&nbsp; Entrepreneurs &nbsp;·&nbsp; Professional Athletes &nbsp;·&nbsp; Navigating Pressure &nbsp;·&nbsp; Transition &nbsp;·&nbsp; Growth &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ PROBLEM ═══════════════ -->
+  <section id="problem">
+    <div class="two-col">
+      <div>
+        <span class="label label-dark reveal">The Problem</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.4rem,4vw,4rem);color:var(--dark);margin-bottom:2rem;">
+          You're performing.<br>But something<br>feels off.
+        </h2>
+        <div class="yellow-bar reveal reveal-d2"></div>
+        <div class="reveal reveal-d3 quote-block">
+          <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--dark);line-height:1.65;">
+            "This is not a productivity problem.<br>It's an energy and alignment problem."
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="body-copy reveal" style="color:rgba(29,27,28,0.7);margin-bottom:1.5rem;">
+          You've built the career, the business, the results. You're good at what you do. But underneath the performance, there's an undercurrent of pressure you can't shake — a feeling that if you stop pushing, everything falls apart.
+        </p>
+        <p class="body-copy reveal reveal-d1" style="color:rgba(29,27,28,0.7);margin-bottom:1.5rem;">
+          The exhaustion is real. The clarity is missing. You're achieving, but it doesn't feel like enough.
+        </p>
+        <p class="body-copy reveal reveal-d2" style="color:rgba(29,27,28,0.7);">
+          Most performance frameworks address output. This work addresses the source — the internal operating system driving (and draining) you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SOLUTION ═══════════════ -->
+  <section id="solution" class="grain">
+    <div class="two-col" style="max-width:1160px;margin:0 auto;">
+      <div class="photo-frame reveal" style="height:580px;">
+        <img src="./Resources/Pictures/CONSCIOUSMEN100.jpeg" alt="Inner transformation work" style="filter:brightness(0.88);">
+        <div class="grad-overlay"></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;">
+          <div style="background:var(--yellow);display:inline-block;padding:0.6rem 1rem;border-radius:2px;">
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);">The work starts within</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="label reveal">The Shift</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.2rem,3.8vw,3.8rem);color:var(--cream);margin-bottom:1.5rem;">
+          This is where<br>we recalibrate.
+        </h2>
+        <p class="body-copy reveal reveal-d2" style="color:var(--muted);margin-bottom:1.5rem;">
+          The work here isn't about doing more. It's about reconnecting — mentally, emotionally and physically — so you can perform from a place of clarity instead of pressure.
+        </p>
+        <p class="body-copy reveal reveal-d3" style="color:var(--muted);margin-bottom:1.75rem;">
+          Real sustainable performance isn't built on willpower and intensity. It comes from alignment — knowing who you are, what you want, and moving from that place. Not doing it differently. Doing it from the right place.
+        </p>
+        <a href="#cta" class="btn-primary reveal reveal-d4">Start the Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ DIFFERENT ═══════════════ -->
+  <section id="different">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="margin-bottom:3.5rem;">
+        <span class="label label-dark reveal">Approach</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--dark);">
+          A different approach<br>to performance.
+        </h2>
+      </div>
+
+      <div class="diff-row reveal">
+        <span class="diff-arrow">→</span>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Energy before productivity</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Your capacity to perform starts with your energy state, not your task list. We address the source, not the symptoms.</div>
+        </div>
+      </div>
+      <div class="diff-row reveal reveal-d1">
+        <span class="diff-arrow">→</span>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Nervous system before strategy</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">The best plan means nothing if your nervous system is in survival mode. Regulation comes first.</div>
+        </div>
+      </div>
+      <div class="diff-row reveal reveal-d2">
+        <span class="diff-arrow">→</span>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Clarity before action</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Move from a grounded, aligned place — not from pressure or reactivity. Clarity accelerates everything else.</div>
+        </div>
+      </div>
+      <div class="diff-row reveal reveal-d3">
+        <span class="diff-arrow">→</span>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Sustainability over intensity</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Build performance protocols that compound over years — not ones that burn you out in months.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SERVICES ═══════════════ -->
+  <section id="services" class="grain">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="label reveal">How We Work Together</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">Choose your path.</h2>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1:1 Coaching -->
+        <div class="service-card reveal">
+          <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
+            <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
+          </svg>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">1:1 Coaching</h3>
+          <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
+            Private work designed for leaders and individuals navigating pressure, transition or internal disconnection. Deep, personal, transformative.
+          </p>
+          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Apply for 1:1</a>
+        </div>
+
+        <!-- Corporate -->
+        <div class="service-card reveal reveal-d1">
+          <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
+            <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
+          </svg>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Leadership & Corporate</h3>
+          <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
+            Workshops and programs to help teams reset, regulate and perform from a sustainable place. Built for organizations that take human performance seriously.
+          </p>
+          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Book a Call</a>
+        </div>
+
+        <!-- 3-Month Program -->
+        <div class="service-card reveal reveal-d2">
+          <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
+            <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
+          </svg>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Signature 3-Month Program</h3>
+          <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
+            A structured, 4-phase process to recalibrate your energy, your mindset and your direction. From exhausted to aligned — in 12 weeks.
+          </p>
+          <a href="#method" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">View Program</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ METHOD ═══════════════ -->
+  <section id="method">
+    <div class="two-col" style="max-width:1160px;margin:0 auto;align-items:start;">
+      <!-- Photo -->
+      <div class="photo-frame method-photo reveal" style="height:640px;">
+        <img src="./Resources/Pictures/IMG_0263.jpeg" alt="Johnny working with a client">
+        <div class="grad-overlay"></div>
+        <div class="tint"></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;background:var(--yellow);padding:0.85rem 1.25rem;border-radius:2px;">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);">12 Weeks · 4 Phases</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <span class="label label-dark reveal">The Method</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(1.9rem,2.8vw,2.8rem);color:var(--dark);margin-bottom:1rem;">
+          Personal<br>Recalibration<br>Method
+        </h2>
+        <p class="reveal reveal-d2" style="font-size:0.92rem;line-height:1.82;color:rgba(29,27,28,0.65);margin-bottom:2.5rem;">
+          A 4-phase process designed to help you release what's draining you, reconnect with your center and move forward with clarity.
+        </p>
+
+        <div class="phase-row reveal reveal-d1">
+          <div class="phase-num">01</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Release & Clarity</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 1–3. Get out of mental overload. Identify energy leaks, review what you're carrying, and find the relief of real order.</div>
+          </div>
+        </div>
+
+        <div class="phase-row reveal reveal-d2">
+          <div class="phase-num">02</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Re-Centering</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 4–6. Return to yourself. Belief review, nervous system recalibration, breathwork, meditation and foundation rebuilding.</div>
+          </div>
+        </div>
+
+        <div class="phase-row reveal reveal-d3">
+          <div class="phase-num">03</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Relationships & Self-Worth</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 7–9. Close the past without drama. Heal abandonment wounds, restructure self-worth, move forward lighter.</div>
+          </div>
+        </div>
+
+        <div class="phase-row reveal reveal-d4">
+          <div class="phase-num">04</div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Life Direction</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 10–12. Build your future with meaning. Why do you work? How do you want to live? A new self-agreement with renewed energy.</div>
+          </div>
+        </div>
+
+        <a href="#cta" class="btn-dark reveal" style="margin-top:2.5rem;">Apply for the 3-Month Program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESULTS ═══════════════ -->
+  <section id="results">
+    <div class="results-img-bg"></div>
+    <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+        <div>
+          <span class="label reveal">Outcomes</span>
+          <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.4rem,4vw,4rem);color:var(--cream);">
+            What changes<br>when you<br>realign.
+          </h2>
+        </div>
+        <div>
+          <div class="check-row reveal">
+            <div class="check-circle">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:1.05rem;color:var(--cream);">You think clearly again</span>
+          </div>
+          <div class="check-row reveal reveal-d1">
+            <div class="check-circle">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:1.05rem;color:var(--cream);">You feel lighter and more in control</span>
+          </div>
+          <div class="check-row reveal reveal-d2">
+            <div class="check-circle">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:1.05rem;color:var(--cream);">You stop operating from pressure</span>
+          </div>
+          <div class="check-row reveal reveal-d3">
+            <div class="check-circle">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:1.05rem;color:var(--cream);">You enjoy your work again</span>
+          </div>
+          <div class="check-row reveal reveal-d4">
+            <div class="check-circle">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:1.05rem;color:var(--cream);">You regain direction and purpose</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="two-col" style="max-width:1160px;margin:0 auto;">
+      <div class="photo-frame reveal" style="height:660px;">
+        <img src="./Resources/Pictures/3033f34f-7213-4398-961f-928fd8a58f0f.jpeg" alt="Johnny Durán" style="object-position:top center;">
+        <div class="grad-overlay"></div>
+      </div>
+      <div>
+        <span class="label label-dark reveal">About</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3vw,3rem);color:var(--dark);margin-bottom:1.5rem;">About Johnny</h2>
+        <div class="yellow-bar reveal reveal-d2"></div>
+
+        <p class="reveal reveal-d2" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:1.4rem;">
+          With over 10 years of experience across PR, sports management, event production and organizational consulting, Johnny brings a rare combination of proven business experience and human depth to leadership development.
+        </p>
+        <p class="reveal reveal-d3" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:1.4rem;">
+          He has worked as a manager for professional football players and entertainment talents, served as a PR professional and sports event producer, and built expertise as an innovation consultant using agile methodologies and design thinking.
+        </p>
+        <p class="reveal" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:2.25rem;">
+          Today, Johnny works with founders and organizational leaders to address what most performance frameworks ignore: <strong>the human cost of high-pressure environments.</strong>
+        </p>
+
+        <!-- Certifications -->
+        <div class="reveal" style="background:rgba(29,27,28,0.04);border-radius:4px;padding:1.4rem;margin-bottom:1.75rem;">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(29,27,28,0.42);margin-bottom:0.9rem;">Certifications & Training</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.45rem;">
+            <span class="cert-chip">Reiki</span>
+            <span class="cert-chip">Access Bars</span>
+            <span class="cert-chip">Transpersonal Therapies</span>
+            <span class="cert-chip">Agile Methodologies</span>
+            <span class="cert-chip">Design Thinking</span>
+            <span class="cert-chip">Manifestation</span>
+            <span class="cert-chip">Numerology</span>
+          </div>
+        </div>
+
+        <!-- TRIBUTHO -->
+        <div class="reveal" style="border:1.5px solid var(--yellow);border-radius:4px;padding:1rem 1.4rem;margin-bottom:2.25rem;background:rgba(172,209,166,0.07);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.95rem;color:var(--dark);">Founder of TRIBUTHO</span>
+          <span style="font-family:'Manrope',sans-serif;font-size:0.8rem;color:rgba(29,27,28,0.58);">Men's Wellbeing & Transformation Community · Barcelona</span>
+        </div>
+
+        <a href="#cta" class="btn-dark reveal">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section id="testimonials" class="grain">
+    <div style="max-width:1160px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="label reveal">Social Proof</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">What clients say.</h2>
+      </div>
+
+      <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+        <!-- Sergio -->
+        <div class="testimonial-card reveal">
+          <div class="big-quote">"</div>
+          <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
+            Working with Johnny gave me the mental clarity and decision-making ability I'd been missing for years. Since our sessions, I've purchased my first home and launched two new businesses. The changes were profound and lasting.
+          </p>
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Sergio Rodriguez</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Entrepreneur, Footwear & Fashion</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paola -->
+        <div class="testimonial-card reveal reveal-d1">
+          <div class="big-quote">"</div>
+          <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
+            My anxiety reduced dramatically. I found emotional balance again after a very hard business period. Johnny helped me reconnect with myself and actually enjoy my life — not just manage it.
+          </p>
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="author-avatar">PR</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Paola Rocha</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Business Owner, Tech & Services</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Angelica -->
+        <div class="testimonial-card reveal reveal-d2">
+          <div class="big-quote">"</div>
+          <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
+            As a professional trader, my mental state is everything. Johnny helped me release blockages I didn't even know I had. My creativity came back, my decisions improved, and my emotional healing was real and lasting.
+          </p>
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="author-avatar">AM</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Angelica Medina</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Professional Trader</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FINAL CTA ═══════════════ -->
+  <section id="cta">
+    <div style="max-width:780px;margin:0 auto;text-align:center;">
+      <h2 class="section-h2 reveal" style="font-size:clamp(2.6rem,5vw,4.8rem);color:var(--cream);margin-bottom:1.5rem;line-height:1.0;">
+        You don't need<br>to push harder.<br>You need to<br>realign.
+      </h2>
+      <p class="reveal reveal-d1" style="font-size:1.05rem;line-height:1.78;color:rgba(254,252,245,0.68);margin-bottom:3rem;max-width:46ch;margin-left:auto;margin-right:auto;">
+        If you're ready to feel clear, stable and in control again — without burning yourself out in the process — this is your next step.
+      </p>
+      <div class="reveal reveal-d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/34605113195" target="_blank" rel="noopener" class="btn-primary">Apply to Work Together</a>
+        <a href="https://calendly.com/johnnyduran/discoverycall" target="_blank" rel="noopener" class="btn-ghost">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.35rem;">Johnny Durán</div>
+        <div style="font-size:0.75rem;color:rgba(165,164,159,0.7);">Based in Barcelona · Working globally</div>
+      </div>
+      <div style="display:flex;gap:2.25rem;align-items:center;">
+        <a href="https://www.instagram.com/johnyduran_?igsh=NXZ3cm1iN3oyNG52&utm_source=qr" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
+        <a href="https://www.linkedin.com/in/johnnyduranwellnessmentor" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+        <a href="https://www.instagram.com/tributho?igsh=emw2dnZtbXY4dDJ6" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">TRIBUTHO</a>
+      </div>
+      <div style="font-size:0.72rem;color:rgba(165,164,159,0.5);">© 2025 Johnny Durán</div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      // Immediately show elements already in viewport
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
