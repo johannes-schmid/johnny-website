@@ -42,7 +42,7 @@
       --muted: #a5a49f;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--dark);
@@ -573,28 +573,49 @@
       border-top: 1px solid rgba(238, 236, 231, 0.07);
     }
 
+    /* ── Grid classes (defined here so media queries can override) ── */
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      #hero {
-        align-items: flex-end;
-      }
+      #hero { align-items: flex-end; }
       .hero-text { padding: 7rem 1.5rem 5rem; }
       .hero-photo-badge { right: 1.5rem; bottom: 5rem; }
-      .two-col { grid-template-columns: 1fr; gap: 3rem; }
+      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .services-grid { grid-template-columns: 1fr; }
       #method .two-col { grid-template-columns: 1fr; }
       .method-photo { display: none; }
-      #testimonials .three-col { grid-template-columns: 1fr; }
+      .three-col { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
+      .photo-frame { height: clamp(280px, 70vw, 480px) !important; }
+      footer > div { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
     }
 
     @media (max-width: 640px) {
-      .hero-headline { font-size: 2.8rem; }
+      .hero-headline { font-size: 2.6rem; }
+      .hero-sub { font-size: 0.95rem; }
       #problem, #solution, #different, #services,
       #method, #results, #about, #testimonials, #cta {
-        padding: 5rem 1.5rem;
+        padding: 4rem 1.25rem;
       }
+      #cta { padding: 5rem 1.25rem; }
+      nav { padding: 0.9rem 1.25rem; }
+      .btn-primary, .btn-ghost { font-size: 0.7rem; padding: 0.62rem 1.1rem; }
+      .nav-logo { font-size: 0.9rem; }
+      footer { padding: 2rem 1.25rem; }
     }
 
     /* ── Photo frame ── */
@@ -901,7 +922,7 @@
   <section id="results">
     <div class="results-img-bg"></div>
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div class="results-grid">
         <div>
           <span class="label reveal">Outcomes</span>
           <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.4rem,4vw,4rem);color:var(--cream);">
@@ -1009,7 +1030,7 @@
         <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">What clients say.</h2>
       </div>
 
-      <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      <div class="three-col">
         <!-- Sergio -->
         <div class="testimonial-card reveal">
           <div class="big-quote">"</div>
