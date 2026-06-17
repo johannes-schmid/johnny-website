@@ -1,26 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Johnny Durán — Leadership & Performance Coach</title>
-  <meta name="description" content="Johnny Durán helps leaders, founders and high-performers regain clarity, regulate their energy and sustain success — without sacrificing their wellbeing.">
+  <title>Johnny Durán — Coach de Liderazgo y Rendimiento</title>
+  <meta name="description" content="Johnny Durán ayuda a líderes, fundadores y profesionales de alto rendimiento a recuperar la claridad, regular su energía y mantener el éxito — sin sacrificar su bienestar.">
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="alternate" hreflang="en" href="/">
   <link rel="alternate" hreflang="es" href="/es/">
   <link rel="alternate" hreflang="x-default" href="/">
-  <script>
-    (function() {
-      if (!sessionStorage.getItem('lang-chosen')) {
-        var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (lang.startsWith('es')) {
-          sessionStorage.setItem('lang-chosen', 'es');
-          location.replace('/es/');
-        }
-      }
-    })();
-  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -511,7 +501,7 @@
     .results-img-bg {
       position: absolute;
       inset: 0;
-      background-image: url('./Resources/Pictures/IMG_7531.jpeg');
+      background-image: url('../Resources/Pictures/IMG_7531.jpeg');
       background-size: cover;
       background-position: center;
       opacity: 0.22;
@@ -608,7 +598,7 @@
       border-top: 1px solid rgba(238, 236, 231, 0.07);
     }
 
-    /* ── Grid classes (defined here so media queries can override) ── */
+    /* ── Grid classes ── */
     .three-col {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -816,56 +806,56 @@
 
   <!-- ═══════════════ NAV ═══════════════ -->
   <nav>
-    <a href="#" class="nav-logo">Johnny Durán</a>
+    <a href="/es/" class="nav-logo">Johnny Durán</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="./blog/index.html">Blog</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#method">Método</a></li>
+      <li><a href="#testimonials">Testimonios</a></li>
+      <li><a href="./blog/">Blog</a></li>
     </ul>
     <div style="display:flex;align-items:center;">
       <div class="lang-switcher">
-        <a href="/" class="lang-btn active" onclick="sessionStorage.setItem('lang-chosen','en')">EN</a>
+        <a href="/" class="lang-btn" onclick="sessionStorage.setItem('lang-chosen','en')">EN</a>
         <span class="lang-sep">|</span>
-        <a href="/es/" class="lang-btn" onclick="sessionStorage.setItem('lang-chosen','es')">ES</a>
+        <a href="/es/" class="lang-btn active" onclick="sessionStorage.setItem('lang-chosen','es')">ES</a>
       </div>
-      <a href="#cta" class="btn-primary">Apply Now</a>
+      <a href="#cta" class="btn-primary">Aplica Ahora</a>
     </div>
   </nav>
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section id="hero" class="grain">
     <div class="hero-bg-photo">
-      <img src="./Resources/Pictures/hero.png" alt="Johnny Durán, Leadership & Performance Coach">
+      <img src="../Resources/Pictures/hero.png" alt="Johnny Durán, Coach de Liderazgo y Rendimiento">
     </div>
     <div class="hero-bg"></div>
 
     <div class="hero-text">
-      <span class="label">Leadership · Energy · Performance</span>
+      <span class="label">Liderazgo · Energía · Rendimiento</span>
       <h1 class="hero-headline">
-        Reconnect<br>with your<br><em>energy.</em>
+        Reconecta<br>con tu<br><em>energía.</em>
       </h1>
       <p class="hero-sub">
-        I help leaders, founders and high-performers regain clarity, regulate their energy and sustain success — without sacrificing their wellbeing.
+        Ayudo a líderes, fundadores y profesionales de alto rendimiento a recuperar la claridad, regular su energía y mantener el éxito — sin sacrificar su bienestar.
       </p>
       <div class="cta-row" style="display:flex;gap:1rem;flex-wrap:wrap;">
-        <a href="#cta" class="btn-primary">Apply to Work Together</a>
-        <a href="#services" class="btn-ghost">Explore Programs &nbsp;↓</a>
+        <a href="#cta" class="btn-primary">Empieza a Trabajar Conmigo</a>
+        <a href="#services" class="btn-ghost">Explorar Programas &nbsp;↓</a>
       </div>
     </div>
 
     <div class="hero-photo-badge">
       <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:0.35rem;">Barcelona · Global</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:rgba(254,252,245,0.65);">Founder of TRIBUTHO</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.82rem;color:rgba(254,252,245,0.65);">Fundador de TRIBUTHO</div>
     </div>
   </section>
 
   <!-- ═══════════════ TRUST STRIP ═══════════════ -->
   <div class="trust-strip">
     <div class="marquee-track">
-      <span>Trusted by Athletes &nbsp;·&nbsp; Founders &nbsp;·&nbsp; Corporate Leaders &nbsp;·&nbsp; High-Performers &nbsp;·&nbsp; Entrepreneurs &nbsp;·&nbsp; Professional Athletes &nbsp;·&nbsp; Navigating Pressure &nbsp;·&nbsp; Transition &nbsp;·&nbsp; Growth &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      <span>Trusted by Athletes &nbsp;·&nbsp; Founders &nbsp;·&nbsp; Corporate Leaders &nbsp;·&nbsp; High-Performers &nbsp;·&nbsp; Entrepreneurs &nbsp;·&nbsp; Professional Athletes &nbsp;·&nbsp; Navigating Pressure &nbsp;·&nbsp; Transition &nbsp;·&nbsp; Growth &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>De confianza entre Atletas &nbsp;·&nbsp; Fundadores &nbsp;·&nbsp; Líderes Corporativos &nbsp;·&nbsp; Profesionales de Alto Rendimiento &nbsp;·&nbsp; Emprendedores &nbsp;·&nbsp; Atletas Profesionales &nbsp;·&nbsp; Navegando la Presión &nbsp;·&nbsp; Transición &nbsp;·&nbsp; Crecimiento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>De confianza entre Atletas &nbsp;·&nbsp; Fundadores &nbsp;·&nbsp; Líderes Corporativos &nbsp;·&nbsp; Profesionales de Alto Rendimiento &nbsp;·&nbsp; Emprendedores &nbsp;·&nbsp; Atletas Profesionales &nbsp;·&nbsp; Navegando la Presión &nbsp;·&nbsp; Transición &nbsp;·&nbsp; Crecimiento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
 
@@ -873,26 +863,26 @@
   <section id="problem">
     <div class="two-col">
       <div>
-        <span class="label label-dark reveal">The Problem</span>
+        <span class="label label-dark reveal">El Problema</span>
         <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.4rem,4vw,4rem);color:var(--dark);margin-bottom:2rem;">
-          You're performing.<br>But something<br>feels off.
+          Rindes.<br>Pero algo<br>no está bien.
         </h2>
         <div class="yellow-bar reveal reveal-d2"></div>
         <div class="reveal reveal-d3 quote-block">
           <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;color:var(--dark);line-height:1.65;">
-            "This is not a productivity problem.<br>It's an energy and alignment problem."
+            "Esto no es un problema de productividad.<br>Es un problema de energía y alineamiento."
           </p>
         </div>
       </div>
       <div>
         <p class="body-copy reveal" style="color:rgba(29,27,28,0.7);margin-bottom:1.5rem;">
-          You've built the career, the business, the results. You're good at what you do. But underneath the performance, there's an undercurrent of pressure you can't shake — a feeling that if you stop pushing, everything falls apart.
+          Has construido la carrera, el negocio, los resultados. Eres bueno en lo que haces. Pero bajo el rendimiento, hay una corriente de presión que no puedes sacudir — una sensación de que si dejas de empujar, todo se desmorona.
         </p>
         <p class="body-copy reveal reveal-d1" style="color:rgba(29,27,28,0.7);margin-bottom:1.5rem;">
-          The exhaustion is real. The clarity is missing. You're achieving, but it doesn't feel like enough.
+          El agotamiento es real. La claridad escasea. Logras cosas, pero nunca parece suficiente.
         </p>
         <p class="body-copy reveal reveal-d2" style="color:rgba(29,27,28,0.7);">
-          Most performance frameworks address output. This work addresses the source — the internal operating system driving (and draining) you.
+          La mayoría de los marcos de rendimiento abordan el resultado. Este trabajo aborda la fuente — el sistema operativo interno que te impulsa (y te drena).
         </p>
       </div>
     </div>
@@ -902,26 +892,26 @@
   <section id="solution" class="grain">
     <div class="two-col" style="max-width:1160px;margin:0 auto;">
       <div class="photo-frame reveal" style="height:580px;">
-        <img src="./Resources/Pictures/CONSCIOUSMEN100.jpeg" alt="Inner transformation work" style="filter:brightness(0.88);">
+        <img src="../Resources/Pictures/CONSCIOUSMEN100.jpeg" alt="Trabajo de transformación interior" style="filter:brightness(0.88);">
         <div class="grad-overlay"></div>
         <div style="position:absolute;bottom:2rem;left:2rem;">
           <div style="background:var(--yellow);display:inline-block;padding:0.6rem 1rem;border-radius:2px;">
-            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);">The work starts within</span>
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);">El trabajo empieza dentro</span>
           </div>
         </div>
       </div>
       <div>
-        <span class="label reveal">The Shift</span>
+        <span class="label reveal">El Cambio</span>
         <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.2rem,3.8vw,3.8rem);color:var(--cream);margin-bottom:1.5rem;">
-          This is where<br>we recalibrate.
+          Aquí es donde<br>recalibramos.
         </h2>
         <p class="body-copy reveal reveal-d2" style="color:var(--muted);margin-bottom:1.5rem;">
-          The work here isn't about doing more. It's about reconnecting — mentally, emotionally and physically — so you can perform from a place of clarity instead of pressure.
+          El trabajo aquí no es hacer más. Es reconectar — mental, emocional y físicamente — para que puedas rendir desde un lugar de claridad en lugar de presión.
         </p>
         <p class="body-copy reveal reveal-d3" style="color:var(--muted);margin-bottom:1.75rem;">
-          Real sustainable performance isn't built on willpower and intensity. It comes from alignment — knowing who you are, what you want, and moving from that place. Not doing it differently. Doing it from the right place.
+          El rendimiento sostenible real no se construye sobre la fuerza de voluntad e intensidad. Viene de la alineación — saber quién eres, qué quieres, y moverte desde ese lugar. No hacerlo de forma diferente. Hacerlo desde el lugar correcto.
         </p>
-        <a href="#cta" class="btn-primary reveal reveal-d4">Start the Conversation</a>
+        <a href="#cta" class="btn-primary reveal reveal-d4">Inicia la Conversación</a>
       </div>
     </div>
   </section>
@@ -930,38 +920,38 @@
   <section id="different">
     <div style="max-width:1160px;margin:0 auto;">
       <div style="margin-bottom:3.5rem;">
-        <span class="label label-dark reveal">Approach</span>
+        <span class="label label-dark reveal">Enfoque</span>
         <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--dark);">
-          A different approach<br>to performance.
+          Un enfoque diferente<br>del rendimiento.
         </h2>
       </div>
 
       <div class="diff-row reveal">
         <span class="diff-arrow">→</span>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Energy before productivity</div>
-          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Your capacity to perform starts with your energy state, not your task list. We address the source, not the symptoms.</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Energía antes que productividad</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Tu capacidad de rendir comienza con tu estado de energía, no con tu lista de tareas. Abordamos la fuente, no los síntomas.</div>
         </div>
       </div>
       <div class="diff-row reveal reveal-d1">
         <span class="diff-arrow">→</span>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Nervous system before strategy</div>
-          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">The best plan means nothing if your nervous system is in survival mode. Regulation comes first.</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Sistema nervioso antes que estrategia</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">El mejor plan no sirve de nada si tu sistema nervioso está en modo supervivencia. La regulación es lo primero.</div>
         </div>
       </div>
       <div class="diff-row reveal reveal-d2">
         <span class="diff-arrow">→</span>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Clarity before action</div>
-          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Move from a grounded, aligned place — not from pressure or reactivity. Clarity accelerates everything else.</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Claridad antes que acción</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Muévete desde un lugar asentado y alineado — no desde la presión o la reactividad. La claridad acelera todo lo demás.</div>
         </div>
       </div>
       <div class="diff-row reveal reveal-d3">
         <span class="diff-arrow">→</span>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Sustainability over intensity</div>
-          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Build performance protocols that compound over years — not ones that burn you out in months.</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--dark);margin-bottom:0.4rem;letter-spacing:-0.02em;">Sostenibilidad sobre intensidad</div>
+          <div style="font-size:0.9rem;color:rgba(29,27,28,0.62);line-height:1.75;">Construye protocolos de rendimiento que se componen durante años — no los que te queman en meses.</div>
         </div>
       </div>
     </div>
@@ -971,48 +961,48 @@
   <section id="services" class="grain">
     <div style="max-width:1160px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:4rem;">
-        <span class="label reveal">How We Work Together</span>
-        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">Choose your path.</h2>
+        <span class="label reveal">Cómo Trabajamos Juntos</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">Elige tu camino.</h2>
       </div>
 
       <div class="services-grid">
-        <!-- 1:1 Coaching -->
+        <!-- Coaching 1:1 -->
         <div class="service-card reveal">
           <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
             <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
             <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
           </svg>
-          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">1:1 Coaching</h3>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Coaching 1:1</h3>
           <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
-            Private work designed for leaders and individuals navigating pressure, transition or internal disconnection. Deep, personal, transformative.
+            Trabajo privado diseñado para líderes e individuos que navegan la presión, la transición o la desconexión interna. Profundo, personal, transformador.
           </p>
-          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Apply for 1:1</a>
+          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Aplicar para 1:1</a>
         </div>
 
-        <!-- Corporate -->
+        <!-- Liderazgo & Corporativo -->
         <div class="service-card reveal reveal-d1">
           <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
             <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
             <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
           </svg>
-          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Leadership & Corporate</h3>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Liderazgo y Corporativo</h3>
           <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
-            Workshops and programs to help teams reset, regulate and perform from a sustainable place. Built for organizations that take human performance seriously.
+            Talleres y programas para ayudar a equipos a reiniciarse, regularse y rendir desde un lugar sostenible. Diseñado para organizaciones que se toman en serio el rendimiento humano.
           </p>
-          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Book a Call</a>
+          <a href="#cta" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Reservar una Llamada</a>
         </div>
 
-        <!-- 3-Month Program -->
+        <!-- Programa de 3 Meses -->
         <div class="service-card reveal reveal-d2">
           <svg class="diamond-icon" viewBox="0 0 28 28" fill="none">
             <path d="M14 2 L26 14 L14 26 L2 14 Z" stroke="#acd1a6" stroke-width="1.5" fill="none"/>
             <path d="M14 7 L21 14 L14 21 L7 14 Z" stroke="#acd1a6" stroke-width="0.75" fill="rgba(172,209,166,0.12)"/>
           </svg>
-          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Signature 3-Month Program</h3>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:0.65rem;letter-spacing:-0.02em;">Programa Insignia de 3 Meses</h3>
           <p style="font-size:0.88rem;line-height:1.82;color:var(--muted);margin-bottom:2.25rem;flex:1;">
-            A structured, 4-phase process to recalibrate your energy, your mindset and your direction. From exhausted to aligned — in 12 weeks.
+            Un proceso estructurado de 4 fases para recalibrar tu energía, tu mentalidad y tu dirección. Del agotamiento a la alineación — en 12 semanas.
           </p>
-          <a href="#method" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">View Program</a>
+          <a href="#method" class="btn-primary" style="font-size:0.7rem;padding:0.62rem 1.2rem;align-self:flex-start;">Ver Programa</a>
         </div>
       </div>
     </div>
@@ -1023,57 +1013,57 @@
     <div class="two-col" style="max-width:1160px;margin:0 auto;align-items:start;">
       <!-- Photo -->
       <div class="photo-frame method-photo reveal" style="height:640px;">
-        <img src="./Resources/Pictures/IMG_0263.jpeg" alt="Johnny working with a client">
+        <img src="../Resources/Pictures/IMG_0263.jpeg" alt="Johnny trabajando con un cliente">
         <div class="grad-overlay"></div>
         <div class="tint"></div>
         <div style="position:absolute;bottom:2rem;left:2rem;background:var(--yellow);padding:0.85rem 1.25rem;border-radius:2px;">
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);">12 Weeks · 4 Phases</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);">12 Semanas · 4 Fases</div>
         </div>
       </div>
 
       <!-- Content -->
       <div>
-        <span class="label label-dark reveal">The Method</span>
+        <span class="label label-dark reveal">El Método</span>
         <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(1.9rem,2.8vw,2.8rem);color:var(--dark);margin-bottom:1rem;">
-          Personal<br>Recalibration<br>Method
+          Método de<br>Recalibración<br>Personal
         </h2>
         <p class="reveal reveal-d2" style="font-size:0.92rem;line-height:1.82;color:rgba(29,27,28,0.65);margin-bottom:2.5rem;">
-          A 4-phase process designed to help you release what's draining you, reconnect with your center and move forward with clarity.
+          Un proceso de 4 fases diseñado para ayudarte a liberar lo que te drena, reconectar con tu centro y avanzar con claridad.
         </p>
 
         <div class="phase-row reveal reveal-d1">
           <div class="phase-num">01</div>
           <div>
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Release & Clarity</div>
-            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 1–3. Get out of mental overload. Identify energy leaks, review what you're carrying, and find the relief of real order.</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Liberación y Claridad</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Semanas 1–3. Sal de la sobrecarga mental. Identifica las fugas de energía, revisa lo que cargas y encuentra el alivio del orden real.</div>
           </div>
         </div>
 
         <div class="phase-row reveal reveal-d2">
           <div class="phase-num">02</div>
           <div>
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Re-Centering</div>
-            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 4–6. Return to yourself. Belief review, nervous system recalibration, breathwork, meditation and foundation rebuilding.</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Re-centrado</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Semanas 4–6. Vuelve a ti mismo. Revisión de creencias, recalibración del sistema nervioso, respiración, meditación y reconstrucción de la base.</div>
           </div>
         </div>
 
         <div class="phase-row reveal reveal-d3">
           <div class="phase-num">03</div>
           <div>
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Relationships & Self-Worth</div>
-            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 7–9. Close the past without drama. Heal abandonment wounds, restructure self-worth, move forward lighter.</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Relaciones y Autoestima</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Semanas 7–9. Cierra el pasado sin drama. Sana heridas de abandono, reestructura la autoestima, avanza más ligero.</div>
           </div>
         </div>
 
         <div class="phase-row reveal reveal-d4">
           <div class="phase-num">04</div>
           <div>
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Life Direction</div>
-            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Weeks 10–12. Build your future with meaning. Why do you work? How do you want to live? A new self-agreement with renewed energy.</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);margin-bottom:0.35rem;">Dirección de Vida</div>
+            <div style="font-size:0.85rem;line-height:1.78;color:rgba(29,27,28,0.6);">Semanas 10–12. Construye tu futuro con sentido. ¿Por qué trabajas? ¿Cómo quieres vivir? Un nuevo acuerdo contigo mismo con energía renovada.</div>
           </div>
         </div>
 
-        <a href="#cta" class="btn-dark reveal" style="margin-top:2.5rem;">Apply for the 3-Month Program</a>
+        <a href="#cta" class="btn-dark reveal" style="margin-top:2.5rem;">Aplicar al Programa de 3 Meses</a>
       </div>
     </div>
   </section>
@@ -1084,9 +1074,9 @@
     <div style="position:relative;z-index:2;max-width:1160px;margin:0 auto;">
       <div class="results-grid">
         <div>
-          <span class="label reveal">Outcomes</span>
+          <span class="label reveal">Resultados</span>
           <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2.4rem,4vw,4rem);color:var(--cream);">
-            What changes<br>when you<br>realign.
+            Qué cambia<br>cuando te<br>realineas.
           </h2>
         </div>
         <div>
@@ -1096,7 +1086,7 @@
                 <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span style="font-size:1.05rem;color:var(--cream);">You think clearly again</span>
+            <span style="font-size:1.05rem;color:var(--cream);">Vuelves a pensar con claridad</span>
           </div>
           <div class="check-row reveal reveal-d1">
             <div class="check-circle">
@@ -1104,7 +1094,7 @@
                 <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span style="font-size:1.05rem;color:var(--cream);">You feel lighter and more in control</span>
+            <span style="font-size:1.05rem;color:var(--cream);">Te sientes más ligero y en control</span>
           </div>
           <div class="check-row reveal reveal-d2">
             <div class="check-circle">
@@ -1112,7 +1102,7 @@
                 <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span style="font-size:1.05rem;color:var(--cream);">You stop operating from pressure</span>
+            <span style="font-size:1.05rem;color:var(--cream);">Dejas de operar desde la presión</span>
           </div>
           <div class="check-row reveal reveal-d3">
             <div class="check-circle">
@@ -1120,7 +1110,7 @@
                 <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span style="font-size:1.05rem;color:var(--cream);">You enjoy your work again</span>
+            <span style="font-size:1.05rem;color:var(--cream);">Vuelves a disfrutar de tu trabajo</span>
           </div>
           <div class="check-row reveal reveal-d4">
             <div class="check-circle">
@@ -1128,7 +1118,7 @@
                 <path d="M1 4l3 3 5-6" stroke="#acd1a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <span style="font-size:1.05rem;color:var(--cream);">You regain direction and purpose</span>
+            <span style="font-size:1.05rem;color:var(--cream);">Recuperas la dirección y el propósito</span>
           </div>
         </div>
       </div>
@@ -1139,45 +1129,45 @@
   <section id="about">
     <div class="two-col" style="max-width:1160px;margin:0 auto;">
       <div class="photo-frame reveal" style="height:660px;">
-        <img src="./Resources/Pictures/3033f34f-7213-4398-961f-928fd8a58f0f.jpeg" alt="Johnny Durán" style="object-position:top center;">
+        <img src="../Resources/Pictures/3033f34f-7213-4398-961f-928fd8a58f0f.jpeg" alt="Johnny Durán" style="object-position:top center;">
         <div class="grad-overlay"></div>
       </div>
       <div>
-        <span class="label label-dark reveal">About</span>
-        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3vw,3rem);color:var(--dark);margin-bottom:1.5rem;">About Johnny</h2>
+        <span class="label label-dark reveal">Sobre mí</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3vw,3rem);color:var(--dark);margin-bottom:1.5rem;">Sobre Johnny</h2>
         <div class="yellow-bar reveal reveal-d2"></div>
 
         <p class="reveal reveal-d2" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:1.4rem;">
-          With over 10 years of experience across PR, sports management, event production and organizational consulting, Johnny brings a rare combination of proven business experience and human depth to leadership development.
+          Con más de 10 años de experiencia en relaciones públicas, gestión deportiva, producción de eventos y consultoría organizacional, Johnny aporta una rara combinación de experiencia empresarial probada y profundidad humana al desarrollo del liderazgo.
         </p>
         <p class="reveal reveal-d3" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:1.4rem;">
-          He has worked as a manager for professional football players and entertainment talents, served as a PR professional and sports event producer, and built expertise as an innovation consultant using agile methodologies and design thinking.
+          Ha trabajado como manager de futbolistas profesionales y talentos del entretenimiento, como profesional de PR y productor de eventos deportivos, y ha desarrollado experiencia como consultor de innovación utilizando metodologías ágiles y design thinking.
         </p>
         <p class="reveal" style="font-size:0.95rem;line-height:1.88;color:rgba(29,27,28,0.7);margin-bottom:2.25rem;">
-          Today, Johnny works with founders and organizational leaders to address what most performance frameworks ignore: <strong>the human cost of high-pressure environments.</strong>
+          Hoy, Johnny trabaja con fundadores y líderes organizacionales para abordar lo que la mayoría de los marcos de rendimiento ignoran: <strong>el coste humano de los entornos de alta presión.</strong>
         </p>
 
         <!-- Certifications -->
         <div class="reveal" style="background:rgba(29,27,28,0.04);border-radius:4px;padding:1.4rem;margin-bottom:1.75rem;">
-          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(29,27,28,0.42);margin-bottom:0.9rem;">Certifications & Training</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(29,27,28,0.42);margin-bottom:0.9rem;">Certificaciones y Formación</div>
           <div style="display:flex;flex-wrap:wrap;gap:0.45rem;">
             <span class="cert-chip">Reiki</span>
             <span class="cert-chip">Access Bars</span>
-            <span class="cert-chip">Transpersonal Therapies</span>
-            <span class="cert-chip">Agile Methodologies</span>
+            <span class="cert-chip">Terapias Transpersonales</span>
+            <span class="cert-chip">Metodologías Ágiles</span>
             <span class="cert-chip">Design Thinking</span>
-            <span class="cert-chip">Manifestation</span>
-            <span class="cert-chip">Numerology</span>
+            <span class="cert-chip">Manifestación</span>
+            <span class="cert-chip">Numerología</span>
           </div>
         </div>
 
         <!-- TRIBUTHO -->
         <div class="reveal" style="border:1.5px solid var(--yellow);border-radius:4px;padding:1rem 1.4rem;margin-bottom:2.25rem;background:rgba(172,209,166,0.07);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.95rem;color:var(--dark);">Founder of TRIBUTHO</span>
-          <span style="font-family:'Manrope',sans-serif;font-size:0.8rem;color:rgba(29,27,28,0.58);">Men's Wellbeing & Transformation Community · Barcelona</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.95rem;color:var(--dark);">Fundador de TRIBUTHO</span>
+          <span style="font-family:'Manrope',sans-serif;font-size:0.8rem;color:rgba(29,27,28,0.58);">Comunidad de Bienestar y Transformación Masculina · Barcelona</span>
         </div>
 
-        <a href="#cta" class="btn-dark reveal">Book a Discovery Call</a>
+        <a href="#cta" class="btn-dark reveal">Reservar una Llamada de Descubrimiento</a>
       </div>
     </div>
   </section>
@@ -1186,8 +1176,8 @@
   <section id="testimonials" class="grain">
     <div style="max-width:1160px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:4rem;">
-        <span class="label reveal">Social Proof</span>
-        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">What clients say.</h2>
+        <span class="label reveal">Testimonios</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">Lo que dicen los clientes.</h2>
       </div>
 
       <div class="three-col">
@@ -1195,13 +1185,13 @@
         <div class="testimonial-card reveal">
           <div class="big-quote">"</div>
           <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
-            Working with Johnny gave me the mental clarity and decision-making ability I'd been missing for years. Since our sessions, I've purchased my first home and launched two new businesses. The changes were profound and lasting.
+            Trabajar con Johnny me dio la claridad mental y la capacidad de toma de decisiones que me faltaban desde hacía años. Desde nuestras sesiones, he comprado mi primera casa y lanzado dos nuevos negocios. Los cambios fueron profundos y duraderos.
           </p>
           <div style="display:flex;align-items:center;gap:0.9rem;">
             <div class="author-avatar">SR</div>
             <div>
               <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Sergio Rodriguez</div>
-              <div style="font-size:0.72rem;color:var(--muted);">Entrepreneur, Footwear & Fashion</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Emprendedor, Calzado y Moda</div>
             </div>
           </div>
         </div>
@@ -1210,13 +1200,13 @@
         <div class="testimonial-card reveal reveal-d1">
           <div class="big-quote">"</div>
           <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
-            My anxiety reduced dramatically. I found emotional balance again after a very hard business period. Johnny helped me reconnect with myself and actually enjoy my life — not just manage it.
+            Mi ansiedad se redujo drásticamente. Encontré el equilibrio emocional de nuevo tras un período empresarial muy duro. Johnny me ayudó a reconectarme conmigo misma y a disfrutar de mi vida — no solo a gestionarla.
           </p>
           <div style="display:flex;align-items:center;gap:0.9rem;">
             <div class="author-avatar">PR</div>
             <div>
               <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Paola Rocha</div>
-              <div style="font-size:0.72rem;color:var(--muted);">Business Owner, Tech & Services</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Empresaria, Tecnología y Servicios</div>
             </div>
           </div>
         </div>
@@ -1225,13 +1215,13 @@
         <div class="testimonial-card reveal reveal-d2">
           <div class="big-quote">"</div>
           <p style="font-size:0.88rem;line-height:1.85;color:var(--muted);margin-bottom:2rem;flex:1;">
-            As a professional trader, my mental state is everything. Johnny helped me release blockages I didn't even know I had. My creativity came back, my decisions improved, and my emotional healing was real and lasting.
+            Como trader profesional, mi estado mental lo es todo. Johnny me ayudó a liberar bloqueos que ni siquiera sabía que tenía. Mi creatividad volvió, mis decisiones mejoraron y mi sanación emocional fue real y duradera.
           </p>
           <div style="display:flex;align-items:center;gap:0.9rem;">
             <div class="author-avatar">AM</div>
             <div>
               <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;color:var(--cream);">Angelica Medina</div>
-              <div style="font-size:0.72rem;color:var(--muted);">Professional Trader</div>
+              <div style="font-size:0.72rem;color:var(--muted);">Trader Profesional</div>
             </div>
           </div>
         </div>
@@ -1243,61 +1233,61 @@
   <section id="blog" class="grain">
     <div style="max-width:1160px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:4rem;">
-        <span class="label reveal">Insights</span>
-        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">From the journal.</h2>
+        <span class="label reveal">Perspectivas</span>
+        <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--cream);">Del diario.</h2>
         <p class="reveal reveal-d2" style="font-size:0.95rem;line-height:1.78;color:var(--muted);max-width:46ch;margin:1.25rem auto 0;">
-          Thoughts on leadership, energy, and what it really takes to perform without losing yourself.
+          Reflexiones sobre liderazgo, energía y lo que realmente se necesita para rendir sin perderte a ti mismo.
         </p>
       </div>
 
       <div class="blog-grid">
-        <!-- Post 1 — Burnout in Barcelona -->
-        <article class="blog-card reveal" tabindex="0" onclick="window.location='./blog/burnout-barcelona.html'" style="cursor:pointer;">
+        <!-- Post 1 — Agotamiento en Barcelona -->
+        <article class="blog-card reveal" tabindex="0" onclick="window.location='../blog/burnout-barcelona.html'" style="cursor:pointer;">
           <div class="blog-card-img-wrap">
-            <img class="blog-card-img" src="https://images.pexels.com/photos/8910324/pexels-photo-8910324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Burnout in Barcelona article">
+            <img class="blog-card-img" src="https://placehold.co/800x450/1a2e1a/acd1a6?text=Barcelona" alt="Artículo Agotamiento en Barcelona">
           </div>
           <div class="blog-card-body">
-            <span class="blog-tag">Burnout · Barcelona · Energy</span>
-            <h3 class="blog-card-title">Burnout in Barcelona: When the city looks fine but you don't.</h3>
+            <span class="blog-tag">Burnout · Barcelona · Energía</span>
+            <h3 class="blog-card-title">Agotamiento en Barcelona: Cuando la ciudad parece bien pero tú no.</h3>
             <p class="blog-card-excerpt">
-              Barcelona is one of the most seductive cities in the world to burn out in. The light is extraordinary. And somehow, surrounded by all of it, you can feel completely empty.
+              Barcelona es una de las ciudades más seductoras del mundo en las que agotarse. La luz es extraordinaria. Y de alguna manera, rodeado de todo ello, puedes sentirte completamente vacío.
             </p>
-            <a href="./blog/burnout-barcelona.html" class="blog-read-more" aria-label="Read: Burnout in Barcelona">Read more &nbsp;→</a>
+            <a href="../blog/burnout-barcelona.html" class="blog-read-more" aria-label="Leer: Agotamiento en Barcelona">Leer más &nbsp;→</a>
           </div>
         </article>
 
         <!-- Post 2 -->
-        <article class="blog-card reveal reveal-d1" tabindex="0" onclick="window.location='./blog/stress-insomnia-leaders.html'" style="cursor:pointer;">
+        <article class="blog-card reveal reveal-d1" tabindex="0">
           <div class="blog-card-img-wrap">
-            <img class="blog-card-img" src="https://images.pexels.com/photos/6944002/pexels-photo-6944002.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Restless man awake at night from stress insomnia">
+            <img class="blog-card-img" src="../Resources/Pictures/IMG_5117.png" alt="Artículo sistema nervioso">
           </div>
           <div class="blog-card-body">
-            <span class="blog-tag">Sleep · Stress · Recovery</span>
-            <h3 class="blog-card-title">Why You Can't Sleep (And What Your Body Is Actually Trying to Tell You)</h3>
+            <span class="blog-tag">Sistema Nervioso · Rendimiento</span>
+            <h3 class="blog-card-title">El Coste Oculto de Vivir en Modo Supervivencia</h3>
             <p class="blog-card-excerpt">
-              Waking at 3am isn't insomnia — it's your nervous system sending data. Here's what stress-related sleep problems actually signal, and how to address the source.
+              Un sistema nervioso desregulado no se anuncia. Se manifiesta como impaciencia, pensamiento superficial y la sensación de que no importa cuánto hagas, nunca es suficiente.
             </p>
-            <a href="./blog/stress-insomnia-leaders.html" class="blog-read-more" aria-label="Read: Why You Can't Sleep">Read more &nbsp;→</a>
+            <a href="#" class="blog-read-more" aria-label="Leer: El Coste Oculto de Vivir en Modo Supervivencia">Leer más &nbsp;→</a>
           </div>
         </article>
 
         <!-- Post 3 -->
-        <article class="blog-card reveal reveal-d2" tabindex="0" onclick="window.location='./blog/always-irritable-burnout.html'" style="cursor:pointer;">
+        <article class="blog-card reveal reveal-d2" tabindex="0">
           <div class="blog-card-img-wrap">
-            <img class="blog-card-img" src="https://images.pexels.com/photos/34014556/pexels-photo-34014556.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Man expressing frustration and irritability from burnout">
+            <img class="blog-card-img" src="../Resources/Pictures/IMG_0578.png" alt="Artículo propósito">
           </div>
           <div class="blog-card-body">
-            <span class="blog-tag">Anger · Nervous System · Burnout</span>
-            <h3 class="blog-card-title">Always Irritable? It's Not Who You Are — It's Your Nervous System</h3>
+            <span class="blog-tag">Mentalidad · Claridad</span>
+            <h3 class="blog-card-title">De Impulsado por la Presión a Impulsado por el Propósito</h3>
             <p class="blog-card-excerpt">
-              A short fuse that appeared during a high-pressure stretch and never left. This isn't a character flaw — it's a nervous system problem that looks like an anger problem.
+              La mayoría de los triunfadores construyen su identidad en los resultados. Cuando los resultados dejan de sentirse significativos, no significa que hayas perdido tu motivación — significa que has superado tu sistema operativo.
             </p>
-            <a href="./blog/always-irritable-burnout.html" class="blog-read-more" aria-label="Read: Always Irritable?">Read more &nbsp;→</a>
+            <a href="#" class="blog-read-more" aria-label="Leer: De Impulsado por la Presión a Impulsado por el Propósito">Leer más &nbsp;→</a>
           </div>
         </article>
       </div>
       <div style="text-align:center;margin-top:3rem;" class="reveal">
-        <a href="./blog/index.html" style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:gap 0.2s ease,opacity 0.2s ease;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.5rem'">View all posts &nbsp;→</a>
+        <a href="./blog/" style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:gap 0.2s ease,opacity 0.2s ease;" onmouseover="this.style.gap='0.8rem'" onmouseout="this.style.gap='0.5rem'">Ver todos los artículos &nbsp;→</a>
       </div>
     </div>
   </section>
@@ -1306,14 +1296,14 @@
   <section id="cta">
     <div style="max-width:780px;margin:0 auto;text-align:center;">
       <h2 class="section-h2 reveal" style="font-size:clamp(2.6rem,5vw,4.8rem);color:var(--cream);margin-bottom:1.5rem;line-height:1.0;">
-        You don't need<br>to push harder.<br>You need to<br>realign.
+        No necesitas<br>esforzarte más.<br>Necesitas<br>realinearte.
       </h2>
       <p class="reveal reveal-d1" style="font-size:1.05rem;line-height:1.78;color:rgba(254,252,245,0.68);margin-bottom:3rem;max-width:46ch;margin-left:auto;margin-right:auto;">
-        If you're ready to feel clear, stable and in control again — without burning yourself out in the process — this is your next step.
+        Si estás listo para sentirte claro, estable y en control de nuevo — sin agotarte en el proceso — este es tu próximo paso.
       </p>
       <div class="reveal reveal-d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="https://wa.me/34605113195" target="_blank" rel="noopener" class="btn-primary">Apply to Work Together</a>
-        <a href="https://calendly.com/johnnyduran/discoverycall" target="_blank" rel="noopener" class="btn-ghost">Book a Discovery Call</a>
+        <a href="https://wa.me/34605113195" target="_blank" rel="noopener" class="btn-primary">Empieza a Trabajar Conmigo</a>
+        <a href="https://calendly.com/johnnyduran/discoverycall" target="_blank" rel="noopener" class="btn-ghost">Reservar una Llamada de Descubrimiento</a>
       </div>
     </div>
   </section>
@@ -1323,7 +1313,7 @@
     <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
       <div>
         <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.35rem;">Johnny Durán</div>
-        <div style="font-size:0.75rem;color:rgba(165,164,159,0.7);">Based in Barcelona · Working globally</div>
+        <div style="font-size:0.75rem;color:rgba(165,164,159,0.7);">Con sede en Barcelona · Trabajando globalmente</div>
       </div>
       <div style="display:flex;gap:2.25rem;align-items:center;">
         <a href="https://www.instagram.com/johnyduran_?igsh=NXZ3cm1iN3oyNG52&utm_source=qr" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
@@ -1341,7 +1331,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => {
-      // Immediately show elements already in viewport
       const r = el.getBoundingClientRect();
       if (r.top < window.innerHeight && r.bottom > 0) {
         el.classList.add('visible');

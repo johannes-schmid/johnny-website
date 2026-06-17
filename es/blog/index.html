@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario — Johnny Durán</title>
+  <meta name="description" content="Reflexiones sobre liderazgo, energía y lo que realmente se necesita para rendir sin perderte a ti mismo. Artículos de Johnny Durán.">
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="alternate" hreflang="en" href="/blog/">
+  <link rel="alternate" hreflang="es" href="/es/blog/">
+  <link rel="alternate" hreflang="x-default" href="/blog/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#1d1b1c',
+            cream: '#fefcf5',
+            yellow: '#acd1a6',
+            warmgray: '#eeece7',
+            muted: '#a5a49f',
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['Manrope', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #1d1b1c;
+      --cream: #fefcf5;
+      --yellow: #acd1a6;
+      --warmgray: #eeece7;
+      --muted: #a5a49f;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Grain ── */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0.032;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 220px 220px;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* ── Lang switcher ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-right: 0.75rem;
+    }
+    .lang-btn {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+    .lang-btn:hover { color: var(--cream); }
+    .lang-btn.active { color: var(--cream); }
+    .lang-sep { font-size: 0.55rem; color: rgba(165,164,159,0.25); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(29, 27, 28, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(238, 236, 231, 0.07);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a.active { color: var(--cream); }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s ease, transform 0.15s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #bdddb8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(172, 209, 166, 0.35);
+    }
+    .btn-primary:active { transform: translateY(0); box-shadow: none; }
+
+    .label {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      display: block;
+    }
+
+    /* ── Page hero ── */
+    .page-hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .page-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to top, rgba(29,27,28,0.55) 0%, rgba(29,27,28,0.28) 40%, rgba(29,27,28,0.12) 75%, transparent 100%),
+        linear-gradient(to bottom, rgba(29,27,28,0.55) 0%, rgba(29,27,28,0.18) 30%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 9rem 2.5rem 6rem;
+      width: 100%;
+    }
+
+    .page-hero-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(4.5rem, 11vw, 13rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--cream);
+    }
+
+    .page-hero-title em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* ── Featured post ── */
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      background: rgba(238, 236, 231, 0.035);
+      border: 1px solid rgba(238, 236, 231, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      max-width: 1160px;
+      margin: 0 auto 1.5rem;
+      transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+    }
+    .featured-post:hover {
+      border-color: rgba(172, 209, 166, 0.28);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.38);
+    }
+    .featured-post:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+    }
+
+    .featured-post-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .featured-post-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.82);
+      transition: filter 0.4s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+    .featured-post:hover .featured-post-img-wrap img {
+      filter: brightness(0.92);
+      transform: scale(1.04);
+    }
+    .featured-post-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 50%, rgba(29,27,28,0.6) 100%);
+      pointer-events: none;
+    }
+
+    .featured-post-body {
+      padding: 3rem 3rem 3rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-tag {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .featured-post-chip {
+      display: inline-block;
+      background: rgba(172, 209, 166, 0.12);
+      border: 1px solid rgba(172, 209, 166, 0.28);
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-post-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .featured-post-excerpt {
+      font-size: 0.92rem;
+      line-height: 1.82;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 44ch;
+    }
+
+    .featured-post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .meta-text {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.7rem;
+      color: rgba(165, 164, 159, 0.72);
+      letter-spacing: 0.04em;
+    }
+
+    .meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(238, 236, 231, 0.22);
+      flex-shrink: 0;
+    }
+
+    .read-more-link {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .featured-post:hover .read-more-link { gap: 0.7rem; }
+
+    /* ── Post grid ── */
+    .posts-section {
+      padding: 0 2.5rem 9rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .post-card {
+      background: rgba(238, 236, 231, 0.035);
+      border: 1px solid rgba(238, 236, 231, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
+    }
+    .post-card:not(.post-card--soon):hover {
+      background: rgba(238, 236, 231, 0.06);
+      border-color: rgba(172, 209, 166, 0.22);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    .post-card:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+    }
+
+    .post-card--soon {
+      cursor: default;
+      opacity: 0.65;
+    }
+
+    .post-card-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .post-card-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(29,27,28,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .post-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.82);
+      transition: filter 0.3s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .post-card:not(.post-card--soon):hover .post-card-img {
+      filter: brightness(0.94);
+      transform: scale(1.04);
+    }
+
+    .post-card-body {
+      padding: 1.75rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-tag {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.7rem;
+    }
+
+    .post-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--cream);
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.72rem;
+    }
+
+    .post-excerpt {
+      font-size: 0.84rem;
+      line-height: 1.82;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-read-more {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .post-card:not(.post-card--soon):hover .post-read-more { gap: 0.65rem; }
+
+    .coming-soon-badge {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(165, 164, 159, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .coming-soon-badge::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: rgba(165, 164, 159, 0.3);
+    }
+
+    /* ── Divider ── */
+    .section-label-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 1160px;
+      margin: 0 auto 2.5rem;
+    }
+    .section-label-row .label { margin-bottom: 0; }
+    .section-label-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(238, 236, 231, 0.07);
+    }
+
+    /* ── Newsletter / CTA ── */
+    .blog-cta {
+      background: #1F3B2A;
+      padding: 7rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-cta::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -8%;
+      width: 55%;
+      height: 160%;
+      background: radial-gradient(ellipse at center, rgba(172,209,166,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      padding: 2.75rem 2.5rem;
+      border-top: 1px solid rgba(238, 236, 231, 0.07);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1000px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post-img-wrap { aspect-ratio: 16/8; }
+      .featured-post-img-wrap::after { background: linear-gradient(to bottom, transparent 40%, rgba(29,27,28,0.7) 100%); }
+      .featured-post-body { padding: 2.25rem 2rem; }
+      .posts-grid { grid-template-columns: 1fr 1fr; }
+      .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .page-hero-inner { padding: 7rem 1.5rem 4.5rem; }
+      .posts-section { padding: 0 1.5rem 6rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .blog-cta { padding: 5rem 1.25rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-logo { font-size: 0.9rem; }
+      nav { padding: 0.9rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+      footer > div { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    }
+
+    /* ── Load animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .page-hero .label      { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+    .page-hero-title       { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+    .page-hero-bg          { animation: fadeIn 1.2s ease 0s both; }
+    .featured-label        { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+    .featured-post         { animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav>
+    <a href="/es/" class="nav-logo">Johnny Durán</a>
+    <ul class="nav-links">
+      <li><a href="/es/#about">Sobre mí</a></li>
+      <li><a href="/es/#services">Servicios</a></li>
+      <li><a href="/es/#method">Método</a></li>
+      <li><a href="/es/#testimonials">Testimonios</a></li>
+      <li><a href="/es/blog/" class="active" aria-current="page">Blog</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;">
+      <div class="lang-switcher">
+        <a href="/blog/" class="lang-btn" onclick="sessionStorage.setItem('lang-chosen','en')">EN</a>
+        <span class="lang-sep">|</span>
+        <a href="/es/blog/" class="lang-btn active" onclick="sessionStorage.setItem('lang-chosen','es')">ES</a>
+      </div>
+      <a href="/es/#cta" class="btn-primary">Aplica Ahora</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="page-hero grain">
+    <div class="page-hero-bg">
+      <img src="../../Resources/Pictures/IMG_7531.jpeg" alt="Diario — Johnny Durán">
+    </div>
+    <div class="page-hero-overlay"></div>
+
+    <div class="page-hero-inner">
+      <span class="label" style="display:block;margin-bottom:1.5rem;">Liderazgo · Energía · Rendimiento</span>
+      <h1 class="page-hero-title">
+        Del<br><em>diario.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FEATURED POST ═══════════════ -->
+  <section style="padding: 0 2.5rem 2rem;">
+    <div class="section-label-row featured-label">
+      <span class="label">Último</span>
+      <div class="section-label-line"></div>
+    </div>
+
+    <a href="../../blog/burnout-barcelona.html" class="featured-post" aria-label="Leer: Agotamiento en Barcelona">
+      <div class="featured-post-img-wrap">
+        <img src="https://images.pexels.com/photos/8910324/pexels-photo-8910324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=680&w=900" alt="Hombre agotado en su escritorio, burnout en Barcelona">
+        <div style="position:absolute;inset:0;background:rgba(172,209,166,0.05);mix-blend-mode:multiply;pointer-events:none;"></div>
+      </div>
+      <div class="featured-post-body">
+        <span class="featured-post-chip">Último artículo</span>
+        <span class="featured-tag">Burnout · Barcelona · Energía</span>
+        <h2 class="featured-post-title">Agotamiento en Barcelona: Cuando la ciudad parece bien pero tú no.</h2>
+        <p class="featured-post-excerpt">
+          Barcelona es una de las ciudades más seductoras del mundo en las que agotarse. La luz es extraordinaria. La comida es viva. Y de alguna manera, rodeado de todo ello, puedes sentirte completamente vacío — y nadie lo nota, ni tú mismo.
+        </p>
+        <div class="featured-post-meta">
+          <span class="meta-text">Por Johnny Durán</span>
+          <div class="meta-dot"></div>
+          <span class="meta-text">Junio 2026</span>
+          <div class="meta-dot"></div>
+          <span class="meta-text">7 min de lectura</span>
+        </div>
+        <span class="read-more-link">Leer artículo &nbsp;→</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ═══════════════ MORE POSTS ═══════════════ -->
+  <section class="posts-section">
+    <div class="section-label-row reveal">
+      <span class="label">Más del diario</span>
+      <div class="section-label-line"></div>
+    </div>
+
+    <div class="posts-grid">
+      <!-- Post 1: Señales de Burnout -->
+      <a href="./senales-burnout-alto-rendimiento.html" class="post-card reveal" aria-label="Leer: Las 7 Señales de Burnout">
+        <div class="post-card-img-wrap">
+          <img class="post-card-img" src="https://images.pexels.com/photos/6837648/pexels-photo-6837648.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Hombre agotado en el trabajo mostrando señales de burnout">
+        </div>
+        <div class="post-card-body">
+          <span class="post-tag">Burnout · Rendimiento · Líderes</span>
+          <h3 class="post-title">Las 7 Señales de Burnout que Ignoramos Hasta que Es Demasiado Tarde</h3>
+          <p class="post-excerpt">
+            Sigues cumpliendo objetivos. Pero algo no está bien — el aplanamiento, el cinismo, las decisiones que pesan más de lo que deberían. Estas son las señales tempranas que la mayoría de los líderes descarta.
+          </p>
+          <span class="post-read-more">Leer artículo &nbsp;→</span>
+        </div>
+      </a>
+
+      <!-- Post 2: Insomnio por Estrés -->
+      <a href="./insomnio-por-estres.html" class="post-card reveal reveal-d1" aria-label="Leer: Por Qué No Puedes Dormir">
+        <div class="post-card-img-wrap">
+          <img class="post-card-img" src="https://images.pexels.com/photos/6944002/pexels-photo-6944002.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Hombre despierto en la cama por insomnio y estrés">
+        </div>
+        <div class="post-card-body">
+          <span class="post-tag">Sueño · Estrés · Recuperación</span>
+          <h3 class="post-title">Por Qué No Puedes Dormir y lo que Tu Cuerpo Realmente Te Está Diciendo</h3>
+          <p class="post-excerpt">
+            Despertar a las 3am con la mente a mil no es insomnio — son datos. Aquí está lo que los problemas de sueño por estrés realmente señalan y cómo abordar el origen.
+          </p>
+          <span class="post-read-more">Leer artículo &nbsp;→</span>
+        </div>
+      </a>
+
+      <!-- Post 3: Estrés Crónico -->
+      <a href="./estres-cronico-rendimiento.html" class="post-card reveal reveal-d2" aria-label="Leer: Cómo el Estrés Crónico Destroza Tu Rendimiento">
+        <div class="post-card-img-wrap">
+          <img class="post-card-img" src="https://images.pexels.com/photos/8297227/pexels-photo-8297227.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Profesional con la cabeza entre las manos por el estrés">
+        </div>
+        <div class="post-card-body">
+          <span class="post-tag">Estrés · Claridad · Enfoque</span>
+          <h3 class="post-title">Cómo el Estrés Crónico Destroza en Silencio Tu Rendimiento</h3>
+          <p class="post-excerpt">
+            No es un colapso. Es una erosión lenta, casi invisible, de tu pensamiento más agudo. Las decisiones se hacen más pesadas, la creatividad desaparece — y te adaptas hacia abajo sin darte cuenta.
+          </p>
+          <span class="post-read-more">Leer artículo &nbsp;→</span>
+        </div>
+      </a>
+
+      <!-- Post 4: Irritabilidad -->
+      <a href="./siempre-irritable-burnout.html" class="post-card reveal reveal-d1" aria-label="Leer: ¿Siempre Irritable?">
+        <div class="post-card-img-wrap">
+          <img class="post-card-img" src="https://images.pexels.com/photos/34014556/pexels-photo-34014556.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Hombre expresando frustración e irritabilidad por el estrés">
+        </div>
+        <div class="post-card-body">
+          <span class="post-tag">Ira · Sistema Nervioso · Burnout</span>
+          <h3 class="post-title">¿Siempre Irritable? No Eres Así — Es Tu Sistema Nervioso</h3>
+          <p class="post-excerpt">
+            Una mecha corta que apareció durante un período de alta presión y nunca se fue. Esto no es un defecto de carácter — es un problema del sistema nervioso que parece un problema de ira.
+          </p>
+          <span class="post-read-more">Leer artículo &nbsp;→</span>
+        </div>
+      </a>
+
+      <!-- Post 5: Relaciones -->
+      <a href="./estres-trabajo-tension-en-pareja.html" class="post-card reveal reveal-d2" aria-label="Leer: Cuando el Estrés Laboral Rompe Tu Relación">
+        <div class="post-card-img-wrap">
+          <img class="post-card-img" src="https://images.pexels.com/photos/8560488/pexels-photo-8560488.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=450&w=800" alt="Pareja de espaldas mostrando tensión en la relación por estrés laboral">
+        </div>
+        <div class="post-card-body">
+          <span class="post-tag">Relaciones · Estrés · Liderazgo</span>
+          <h3 class="post-title">Cuando el Estrés Laboral Empieza a Romper Tu Relación (Y Cómo Frenarlo)</h3>
+          <p class="post-excerpt">
+            Brillante en el trabajo, cada vez más ausente en todo lo demás. Cuando tu relación empieza a pagar el coste de tu carga laboral, es una señal de que algo más profundo necesita atención.
+          </p>
+          <span class="post-read-more">Leer artículo &nbsp;→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="blog-cta">
+    <div style="max-width:680px;margin:0 auto;text-align:center;position:relative;z-index:2;">
+      <span class="label reveal" style="display:block;margin-bottom:1.5rem;">Siguiente Paso</span>
+      <h2 class="reveal reveal-d1" style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;letter-spacing:-0.03em;color:var(--cream);margin-bottom:1.5rem;">
+        ¿Listo para dejar de<br>rendir desde el <em style="font-style:normal;color:var(--yellow);">agotamiento</em>?
+      </h2>
+      <p class="reveal reveal-d2" style="font-size:1.02rem;line-height:1.78;color:rgba(254,252,245,0.68);max-width:44ch;margin:0 auto 2.75rem;">
+        Si lo que leíste resonó en algún lugar real, hablemos. Una conversación honesta puede mover más que seis meses haciéndolo solo.
+      </p>
+      <div class="reveal reveal-d3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/34605113195" target="_blank" rel="noopener" class="btn-primary">Empieza a Trabajar Conmigo</a>
+        <a href="https://calendly.com/johnnyduran/discoverycall" target="_blank" rel="noopener" style="border:1px solid rgba(238,236,231,0.28);color:var(--cream);font-family:'Manrope',sans-serif;font-weight:600;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.7rem 1.5rem;border-radius:2px;text-decoration:none;display:inline-block;transition:border-color 0.2s ease,background 0.2s ease,transform 0.15s ease;" onmouseover="this.style.borderColor='rgba(238,236,231,0.6)';this.style.background='rgba(238,236,231,0.05)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(238,236,231,0.28)';this.style.background='';this.style.transform=''">Reservar una Llamada de Descubrimiento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.35rem;">Johnny Durán</div>
+        <div style="font-size:0.75rem;color:rgba(165,164,159,0.7);">Con sede en Barcelona · Trabajando globalmente</div>
+      </div>
+      <div style="display:flex;gap:2.25rem;align-items:center;">
+        <a href="https://www.instagram.com/johnyduran_?igsh=NXZ3cm1iN3oyNG52&utm_source=qr" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
+        <a href="https://www.linkedin.com/in/johnnyduranwellnessmentor" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+        <a href="https://www.instagram.com/tributho?igsh=emw2dnZtbXY4dDJ6" target="_blank" rel="noopener" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='var(--cream)'" onmouseout="this.style.color='var(--muted)'">TRIBUTHO</a>
+      </div>
+      <div style="font-size:0.72rem;color:rgba(165,164,159,0.5);">© 2026 Johnny Durán</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('visible');
+      } else {
+        revealObserver.observe(el);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -90,6 +90,16 @@
 
 ---
 
+## Multilingual Content Rule
+This site is **bilingual (English + Spanish)**. Whenever you add or update any content:
+- Update the **English version first** (`index.html`, `blog/index.html`)
+- Then update the **Spanish version** (`es/index.html`, `es/blog/index.html`)
+- Never leave one language out of sync with the other
+- New blog posts need a Spanish translation (or a note in the Spanish blog listing)
+- Image paths in `es/` use `../` prefix; in `es/blog/` use `../../` prefix
+
+---
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
