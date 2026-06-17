@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HSJWWG5RZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HSJWWG5RZ9');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Johnny Durán — Leadership & Performance Coach</title>
@@ -794,6 +803,149 @@
       #blog { padding: 4rem 1.25rem; }
     }
 
+    /* ── FAQ ── */
+    #faq {
+      background: var(--warmgray);
+      padding: 8rem 2.5rem;
+    }
+
+    .faq-lang-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(29,27,28,0.14);
+      border-radius: 3px;
+      overflow: hidden;
+      width: fit-content;
+    }
+    .faq-lang-tab {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.42rem 1rem;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: rgba(29,27,28,0.42);
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .faq-lang-tab.active {
+      background: var(--dark);
+      color: var(--cream);
+    }
+    .faq-lang-tab:focus-visible { outline: 2px solid var(--yellow); outline-offset: -2px; }
+
+    .faq-cat-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(29,27,28,0.12);
+      margin-bottom: 0;
+    }
+    .faq-cat-tab {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.5rem 0.85rem 0;
+      margin-right: 2rem;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: rgba(29,27,28,0.38);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .faq-cat-tab.active {
+      color: var(--dark);
+      border-bottom-color: var(--dark);
+    }
+    .faq-cat-tab:hover { color: rgba(29,27,28,0.7); }
+    .faq-cat-tab:focus-visible { outline: 2px solid var(--yellow); outline-offset: 2px; }
+
+    .faq-panel { display: none; }
+    .faq-panel.active { display: block; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(29,27,28,0.1);
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(29,27,28,0.1); }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.4rem 0;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+    .faq-question-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--dark);
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+    }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid rgba(29,27,28,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-item.open .faq-chevron {
+      background: var(--dark);
+      border-color: var(--dark);
+      transform: rotate(45deg);
+    }
+    .faq-chevron svg { transition: stroke 0.2s ease; }
+    .faq-item.open .faq-chevron svg path { stroke: var(--cream); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1), padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 320px;
+    }
+    .faq-answer-inner {
+      padding: 0 0 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.88;
+      color: rgba(29,27,28,0.65);
+    }
+
+    .faq-cta-strip {
+      margin-top: 3.5rem;
+      background: var(--dark);
+      border-radius: 4px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      #faq { padding: 4rem 1.25rem; }
+      .faq-cat-tab { padding: 0.75rem 1rem 0.75rem 0; margin-right: 1rem; font-size: 0.62rem; }
+      .faq-question-text { font-size: 0.95rem; }
+      .faq-cta-strip { padding: 1.5rem; }
+    }
+
     /* ── Load animations ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -1302,6 +1454,263 @@
     </div>
   </section>
 
+  <!-- ═══════════════ FAQ ═══════════════ -->
+  <section id="faq">
+    <div style="max-width:860px;margin:0 auto;">
+
+      <!-- Header row -->
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;">
+        <div>
+          <span class="label label-dark reveal">FAQ</span>
+          <h2 class="section-h2 reveal reveal-d1" style="font-size:clamp(2rem,3.2vw,3rem);color:var(--dark);line-height:1.05;">
+            Your questions,<br>answered.
+          </h2>
+          <p class="reveal reveal-d2" style="font-size:0.9rem;line-height:1.75;color:rgba(29,27,28,0.52);margin-top:0.75rem;">Everything you need to know before taking the next step.</p>
+        </div>
+        <div class="faq-lang-tabs reveal reveal-d2">
+          <button class="faq-lang-tab active" data-lang="en" onclick="switchFaqLang('en')">English</button>
+          <button class="faq-lang-tab" data-lang="es" onclick="switchFaqLang('es')">Español</button>
+        </div>
+      </div>
+
+      <!-- ── ENGLISH ── -->
+      <div id="faq-en" class="faq-lang-section">
+        <!-- Category tabs -->
+        <div class="faq-cat-tabs" role="tablist">
+          <button class="faq-cat-tab active" role="tab" onclick="switchFaqCat('en','work')">The Work</button>
+          <button class="faq-cat-tab" role="tab" onclick="switchFaqCat('en','logistics')">Programs &amp; Logistics</button>
+          <button class="faq-cat-tab" role="tab" onclick="switchFaqCat('en','investment')">Results &amp; Investment</button>
+        </div>
+
+        <!-- The Work -->
+        <div id="faq-en-work" class="faq-panel active" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">What exactly do you do — is this therapy, coaching or something else?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Neither box fits exactly. This is structured personal development work — part performance coaching, part somatic practice, part nervous system regulation. It's not clinical therapy, and it's not generic life coaching. It's for people who've already optimized their productivity and still feel off. We work on the source, not the surface.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">Who is this work for?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Leaders, founders and high-performers — people who are objectively succeeding, but running on fumes. You've built the career, the business, the results. But the cost is becoming visible: in your sleep, your mood, your relationships, your ability to think clearly. If that sounds familiar, this is for you.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">What tools and methods do you use?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">The work integrates somatic practices, breathwork, meditation, nervous system regulation, belief work and energy sessions (including Reiki and Access Bars). These are combined with structured coaching conversations and practical frameworks. The specific mix depends on what you need — there's no fixed script.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">Is this religious or spiritual in any particular way?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">No. The methods are practical and experiential. There's no doctrine, no belief system required. Many clients have no spiritual background at all. The work is about your nervous system, your patterns and your performance — not metaphysics.</div></div>
+          </div>
+
+        </div>
+
+        <!-- Programs & Logistics -->
+        <div id="faq-en-logistics" class="faq-panel" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">What's the difference between 1:1 Coaching and the 3-Month Program?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">1:1 Coaching is flexible and ongoing — sessions on your timeline, focused on what's most pressing right now. The 3-Month Program is structured: four phases, a defined sequence, built for people who want a complete reset rather than ongoing maintenance. If you're unsure which fits, the discovery call is the right starting point.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">How often do we meet, and how long are sessions?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Sessions are typically 60–90 minutes. In the 3-Month Program, we meet weekly. 1:1 Coaching cadence is tailored to you — usually bi-weekly. All sessions are available remotely via video call, or in person in Barcelona.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">Do you work with people outside Spain?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes. Most clients work with Johnny remotely via video call. The work is entirely location-independent. He works with founders and leaders across Europe, Latin America and beyond.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">How does the corporate / team offering work?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Corporate engagements are fully tailored to the organization. This typically includes a scoping conversation followed by workshops, off-sites or an ongoing program for leadership teams. Investment and format are defined together. If you're exploring this for your company, reach out directly.</div></div>
+          </div>
+
+        </div>
+
+        <!-- Results & Investment -->
+        <div id="faq-en-investment" class="faq-panel" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">How quickly will I see results?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Most clients notice shifts in clarity, energy and reactivity within the first few sessions. Lasting structural change takes longer — that's what the 3-Month Program is designed for. Real transformation isn't a weekend experience; it's a consistent process that compounds. The discovery call will give you a realistic picture of what to expect.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">What does it cost?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Investment varies by program and engagement. The discovery call is free and includes a clear overview of what's involved. There's no pressure and no commitment. If it's a fit, the next steps are straightforward.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">What if I'm not sure this is right for me?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">That's exactly what the discovery call is for. 30 minutes, free, no commitment. You leave with clarity — either a clear next step together, or a clear sense that this isn't the right fit right now. Either outcome is useful.</div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── ESPAÑOL ── -->
+      <div id="faq-es" class="faq-lang-section" style="display:none;">
+        <!-- Category tabs -->
+        <div class="faq-cat-tabs" role="tablist">
+          <button class="faq-cat-tab active" role="tab" onclick="switchFaqCat('es','trabajo')">El Trabajo</button>
+          <button class="faq-cat-tab" role="tab" onclick="switchFaqCat('es','logistica')">Programas y Logística</button>
+          <button class="faq-cat-tab" role="tab" onclick="switchFaqCat('es','inversion')">Resultados e Inversión</button>
+        </div>
+
+        <!-- El Trabajo -->
+        <div id="faq-es-trabajo" class="faq-panel active" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Esto es terapia, coaching o qué?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">No encaja del todo en ninguna caja. Es trabajo de desarrollo personal estructurado — parte coaching de rendimiento, parte práctica somática, parte regulación del sistema nervioso. No es terapia clínica ni coaching genérico de vida. Es para quien ya ha optimizado su productividad y aun así siente que algo no cuadra. Trabajamos la fuente, no la superficie.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Para quién es este trabajo?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Para líderes, emprendedores y hombres de alto rendimiento — los que están funcionando por fuera pero cargando demasiado por dentro. Has construido los resultados. Pero el costo ya se siente: en el sueño, el humor, las relaciones, la capacidad de pensar con claridad. Si eso te suena conocido, esto es para ti.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Qué herramientas y métodos se usan?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">El trabajo integra prácticas somáticas, respiración, meditación, regulación del sistema nervioso, trabajo con creencias y sesiones de energía (incluyendo Reiki y Access Bars). Esto se combina con conversaciones de coaching estructuradas y marcos prácticos. La mezcla específica depende de lo que necesitas — no hay guión fijo.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Esto es religioso o espiritual de alguna manera?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">No. Los métodos son prácticos y experienciales. No hay doctrina ni creencia requerida. Muchos clientes no tienen ningún trasfondo espiritual. El trabajo es sobre tu sistema nervioso, tus patrones y tu rendimiento — no metafísica.</div></div>
+          </div>
+
+        </div>
+
+        <!-- Programas y Logística -->
+        <div id="faq-es-logistica" class="faq-panel" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Cuál es la diferencia entre el Coaching 1:1 y el Programa de 3 Meses?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">El Coaching 1:1 es flexible y continuo — sesiones a tu ritmo, enfocadas en lo que más presiona en este momento. El Programa de 3 Meses es estructurado: cuatro fases, una secuencia definida, diseñado para quien quiere un reinicio completo y no solo mantenimiento. Si no estás seguro cuál encaja, la llamada de descubrimiento es el punto de partida.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Con qué frecuencia nos reunimos y cuánto duran las sesiones?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Las sesiones son típicamente de 60 a 90 minutos. En el Programa de 3 Meses, nos reunimos semanalmente. El ritmo del Coaching 1:1 se adapta a ti — usualmente cada dos semanas. Todas las sesiones están disponibles de forma remota por videollamada, o en persona en Barcelona.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Trabajas con personas fuera de España?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Sí. La mayoría de los clientes trabajan con Johnny de forma remota. El trabajo es completamente independiente de la ubicación. Trabaja con emprendedores y líderes en toda Europa, América Latina y más allá.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Cómo funciona la oferta para equipos corporativos?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Los compromisos corporativos están completamente adaptados a la organización. Esto incluye una conversación de alcance, seguida de talleres, retiros o un programa continuo para equipos de liderazgo. Si estás explorando esto para tu empresa, contáctanos directamente.</div></div>
+          </div>
+
+        </div>
+
+        <!-- Resultados e Inversión -->
+        <div id="faq-es-inversion" class="faq-panel" style="margin-top:1px;">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Qué tan rápido veré resultados?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">La mayoría de los clientes notan cambios en claridad, energía y reactividad en las primeras sesiones. El cambio estructural duradero toma más tiempo — para eso está diseñado el Programa de 3 Meses. La transformación real no es una experiencia de fin de semana; es un proceso consistente que se acumula. La llamada de descubrimiento te dará una imagen realista de qué esperar.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Cuánto cuesta?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">La inversión varía según el programa y el compromiso. La llamada de descubrimiento es gratuita e incluye una visión clara de lo que implica. Sin presión ni compromiso. Si hay afinidad, los próximos pasos son directos.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+              <span class="faq-question-text">¿Y si no estoy seguro de que esto es para mí?</span>
+              <span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M4.5 1v7M1 4.5h7" stroke="#1d1b1c" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">Para eso es exactamente la llamada de descubrimiento. 30 minutos, gratuita, sin compromiso. Sales con claridad — ya sea un próximo paso juntos, o la certeza de que este no es el momento adecuado. Cualquier resultado es útil.</div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom CTA strip -->
+      <div class="faq-cta-strip reveal">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--cream);margin-bottom:0.3rem;">Still have questions?</div>
+          <div style="font-size:0.85rem;color:rgba(254,252,245,0.52);">The Discovery Call is free. No commitment, no pressure.</div>
+        </div>
+        <a href="https://calendly.com/johnnyduran/discoverycall" target="_blank" rel="noopener" class="btn-primary">Book a Free Call</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ═══════════════ FINAL CTA ═══════════════ -->
   <section id="cta">
     <div style="max-width:780px;margin:0 auto;text-align:center;">
@@ -1349,6 +1758,37 @@
         revealObserver.observe(el);
       }
     });
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all in same panel
+      item.closest('.faq-panel').querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // FAQ language switcher
+    function switchFaqLang(lang) {
+      document.querySelectorAll('.faq-lang-section').forEach(s => s.style.display = 'none');
+      document.getElementById('faq-' + lang).style.display = 'block';
+      document.querySelectorAll('.faq-lang-tab').forEach(t => t.classList.toggle('active', t.dataset.lang === lang));
+    }
+
+    // FAQ category tabs
+    function switchFaqCat(lang, cat) {
+      const section = document.getElementById('faq-' + lang);
+      section.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+      section.querySelectorAll('.faq-cat-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('faq-' + lang + '-' + cat).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
 
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
