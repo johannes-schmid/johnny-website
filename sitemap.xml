@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── Homepage ── -->
+  <url>
+    <loc>https://www.johnnydurán.com/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/index.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/index.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── Blog index ── -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/index.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/index.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Blog posts ── -->
+
+  <!-- Burnout Barcelona (original post) -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/burnout-barcelona.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/burnout-barcelona.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Burnout signs high performers -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/burnout-signs-high-performers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/burnout-signs-high-performers.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/senales-burnout-alto-rendimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/burnout-signs-high-performers.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/senales-burnout-alto-rendimiento.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/burnout-signs-high-performers.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/senales-burnout-alto-rendimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/burnout-signs-high-performers.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Stress insomnia leaders -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/stress-insomnia-leaders.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/stress-insomnia-leaders.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/insomnio-por-estres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/stress-insomnia-leaders.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/insomnio-por-estres.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/stress-insomnia-leaders.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/insomnio-por-estres.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/stress-insomnia-leaders.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Chronic stress focus performance -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/chronic-stress-focus-performance.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/chronic-stress-focus-performance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/estres-cronico-rendimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/chronic-stress-focus-performance.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/estres-cronico-rendimiento.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/chronic-stress-focus-performance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/estres-cronico-rendimiento.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/chronic-stress-focus-performance.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Always irritable burnout -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/always-irritable-burnout.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/always-irritable-burnout.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/siempre-irritable-burnout.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/always-irritable-burnout.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/siempre-irritable-burnout.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/always-irritable-burnout.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/siempre-irritable-burnout.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/always-irritable-burnout.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Work stress relationship tension -->
+  <url>
+    <loc>https://www.johnnydurán.com/blog/work-stress-relationship-tension.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/work-stress-relationship-tension.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/estres-trabajo-tension-en-pareja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/work-stress-relationship-tension.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.johnnydurán.com/es/blog/estres-trabajo-tension-en-pareja.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.johnnydurán.com/blog/work-stress-relationship-tension.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.johnnydurán.com/es/blog/estres-trabajo-tension-en-pareja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.johnnydurán.com/blog/work-stress-relationship-tension.html"/>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
